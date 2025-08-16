@@ -17,3 +17,11 @@
 }
 
 
+@variant dark (&:is(.dark *));
+
+
+.dark {
+  color-scheme: dark;
+}
+
+

@@ -1,111 +1,84 @@
-import React, { useRef} from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { assets } from "@/assets/assets";
 
-const Navbar = () => {
-   const sideMenuRef = useRef();
+const Navbar = ({ isDarkMode, setIsDarkMode }) => {
+  const sideMenuRef = useRef();
+
   const openMenu = () => {
-    sideMenuRef.current.style.transform = "translateX(-16rem)";
+    sideMenuRef.current.style.transform = "translateX(0)";
   };
+
   const closeMenu = () => {
     sideMenuRef.current.style.transform = "translateX(16rem)";
   };
 
   return (
-    <>
-      <div className="fixed top-0 right-0 w-11/12 z-10  translate-y-[-80%]">
-        <Image src={assets.header_bg_color} alt="" className="w-20" />
-      </div>
-      <nav className=" bg-white w-full fixed px-5 lg:px-7 xl:px-[8%] py-0  flex items-center justify-between  z-50">
-        <a href="#top">
+  <nav className=" bg-white w-full fixed px-5 lg:px-7 xl:px-[8%] pt-4 py-2 flex items-center justify-between z-50 dark:text-white dark:bg-[#121213]">
+
+      {/* Dark Mode Toggle - Left */}
+      <button
+        className="cursor-pointer flex items-center justify-center"
+        onClick={() => setIsDarkMode((prev) => !prev)}
+      >
+        <Image
+          src={isDarkMode ? assets.sun_icon : assets.moon_icon}
+          alt="Toggle dark mode"
+          width={24}
+          height={24}
+          className="w-6"
+        />
+      </button>
+
+      {/* Desktop Menu Items - Center */}
+      <ul className="hidden md:flex w-full items-center justify-center gap-6 lg:gap-8">
+        {["Home", "About", "Services", "My Work", "Contact"].map((item) => (
+          <li key={item}>
+            <a className="font-outfit" href={`#${item.toLowerCase().replace(" ", "")}`}>
+              {item}
+            </a>
+          </li>
+        ))}
+      </ul>
+
+      {/* Mobile Menu Icon - Right */}
+      <button
+        onClick={openMenu}
+        className="block md:hidden cursor-pointer"
+      >
+        <Image
+          src={isDarkMode ? assets.menu_white : assets.menu_black}
+          alt="Menu"
+          width={24}
+          height={24}
+          className="w-6"
+        />
+      </button>
+
+      {/* Mobile Menu */}
+      <ul
+        ref={sideMenuRef}
+        className="flex md:hidden flex-col gap-4 py-20 px-10 fixed right-0 top-0 bottom-0 w-64 h-screen z-50 bg-slate-100 dark:bg-[#161616] transform translate-x-64 transition-transform duration-500"
+      >
+        <div onClick={closeMenu} className="absolute top-6 right-6">
           <Image
-            src={assets.logo}
-            alt=""
-            className="w-28 cursor-pointer mr-14"
+            src={isDarkMode ? assets.close_white : assets.close_black}
+            alt="Close menu"
+            width={20}
+            height={20}
+            className="w-5 cursor-pointer"
           />
-        </a>
-        <ul className="hidden md:flex w-full items-center justify-center gap-6 lg:gap-8 px-12 py-3 bg-white ">
-          <li>
-            <a className="font-ovo" href="#top">
-              Home
-            </a>
-          </li>
-          <li>
-            <a className="font-ovo" href="#about">
-              About me
-            </a>
-          </li>
-          <li>
-            <a className="font-ovo" href="#services">
-              Servicers
-            </a>
-          </li>
-          <li>
-            <a className="font-ovo" href="#work">
-              My Work
-            </a>
-          </li>
-          <li>
-            <a className="font-ovo" href="#contact">
-              Contact me
-            </a>
-          </li>
-        </ul>
-        <div className="flex items-center gap-4">
-          <button>
-            <Image src={assets.moon_icon} className="w-6"alt="" />
-          </button>
-          <a
-            className="hidden lg:flex items-center gap-3 px-10 py-2.5 border border-gray-500 rounded-full ml-4 font-ovo"
-            href="#contact"
-          >
-            Contact <Image src={assets.arrow_icon} className="w-3" alt="" />
-          </a>
-          <button onClick={openMenu} className="block md:hidden ml-3 cursor-pointer">
-            <Image src={assets.menu_black} className="w-6" alt="" />
-          </button>
         </div>
 
-        {/* Mobile Menu */}
-        <ul
-          ref={sideMenuRef}
-          className="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen bg-slate-100 transition duration-500"
-        >
-          <div onClick={closeMenu} className="absolute top-6 right-6">
-            <Image
-              src={assets.close_black}
-              alt=""
-              className="w-5 cursor-pointer"
-            />
-          </div>
-          <li>
-            <a onClick={closeMenu} className="font-ovo" href="#top">
-              Home
+        {["Home", "About", "Services", "My Work", "Contact"].map((item) => (
+          <li key={item}>
+            <a onClick={closeMenu} className="font-outfit" href={`#${item.toLowerCase().replace(" ", "")}`}>
+              {item}
             </a>
           </li>
-          <li>
-            <a onClick={closeMenu} className="font-ovo" href="#about">
-              About me
-            </a>
-          </li>
-          <li>
-            <a onClick={closeMenu} className="font-ovo" href="#services">
-              Servicers
-            </a>
-          </li>
-          <li>
-            <a onClick={closeMenu} className="font-ovo" href="#work">
-              My Work
-            </a>
-          </li>
-          <li>
-            <a onClick={closeMenu} className="font-ovo" href="#contact">
-              Contact me
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </>
+        ))}
+      </ul>
+    </nav>
   );
 };
 
