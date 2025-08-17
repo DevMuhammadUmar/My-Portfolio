@@ -56,7 +56,7 @@ export const cardData = [
     description:
       "Responsive movie streaming web app with ReactJS & Firebase. Features user login, trending lists, hover effects, and dynamic TMDB data.",
     tech: ["React.js", "Firebase", "JavaScript"],
-    link: "https://your-live-project-link.com",
+    link: "https://my-flix-clone.netlify.app/",
     image:
       "https://raw.githubusercontent.com/DevMuhammadUmar/portfolio-assets/4ae5b3e5606818f40a9ac82caad7fdb34de1086b/Screenshot%202025-08-17%20043949.png",
   },
@@ -65,7 +65,7 @@ export const cardData = [
     description:
       "All-in-one AI SAAS platform for writing, image creation, editing, and resume review. Built with React, Tailwind, Express & Cloudinary.",
     tech: ["React", "Tailwind CSS", "Express", "Cloudinary"],
-    link: "https://your-live-project-link.com",
+    link: "https://promptix-ai.netlify.app/",
     image:
       "https://raw.githubusercontent.com/DevMuhammadUmar/portfolio-assets/4ae5b3e5606818f40a9ac82caad7fdb34de1086b/Screenshot%202025-08-17%20043840.png",
   },
@@ -74,7 +74,7 @@ export const cardData = [
     description:
       "Client-side React app with Puter AI integration for resume analysis. Secure login, on-device processing, instant feedback without backend.",
     tech: ["React.js", "Puter AI", "JavaScript"],
-    link: "https://your-live-project-link.com",
+    link: "https://jobmatch-pro.netlify.app/",
     image:
       "https://raw.githubusercontent.com/DevMuhammadUmar/portfolio-assets/4ae5b3e5606818f40a9ac82caad7fdb34de1086b/Screenshot%202025-08-17%20044031.png",
   },
@@ -83,7 +83,7 @@ export const cardData = [
     description:
       "My own portfolio website built to showcase projects, skills, and experiences. Modern, responsive design with smooth animations and dark mode support.",
     tech: ["Next.js", "React", "Framer Motion", "Tailwind CSS", "JavaScript"],
-    link: "https://your-live-project-link.com",
+    link: "https://devmuhammadumar.netlify.app/",
     image:
       "https://raw.githubusercontent.com/DevMuhammadUmar/portfolio-assets/4ae5b3e5606818f40a9ac82caad7fdb34de1086b/Screenshot%202025-08-17%20044110.png",
   },
