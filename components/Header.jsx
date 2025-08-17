@@ -84,7 +84,7 @@ const Header = ({ isDarkMode }) => {
           transition={{ duration: 0.6, delay: 1.2 }}
           className="dark:text-black dark:bg-slate-200 px-10 py-3 border rounded-full border-gray-500 flex items-center gap-2 hover:scale-105 transition-all duration-400 cursor-pointer"
           download
-          href="/sample-resume.pdf"
+          href="/muhammad-umar-resume.pdf"
         >
           My Resume
           <Image src={assets.download_icon} alt="Download" className="w-4" />
