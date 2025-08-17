@@ -1,11 +1,12 @@
 import { assets, infoList, toolsData } from "@/assets/assets";
 import Image from "next/image";
 import React from "react";
+import { motion } from "motion/react"
 
 const About = ({ isDarkMode }) => {
   return (
     <div id="about" className=" w-full px-[12%] py-20 scroll-mt-0">
-      <h4 className="text-center mb-2 text-lg font-outfit">Introduction</h4>
+      <h4 className="text-center mb-1 mt-[-6] text-lg font-outfit">Introduction</h4>
       <h2 className="text-center text-5xl font-outfit">About Me</h2>
 
       <div className="flex w-full flex-col lg:flex-row items-center gap-20 my-0">
@@ -17,12 +18,7 @@ const About = ({ isDarkMode }) => {
           />
         </div>
         <div className="flex-1">
-          <p className="mt-4 mb-4 max-w-2xl font-outfit">
-            I create modern, responsive, and engaging front-end experiences with
-            React and Tailwind CSS. I turn designs into smooth, maintainable
-            interfaces and also work with Flutter to build cross-platform web
-            and mobile applications.
-          </p>
+          
           <ul className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl">
             {infoList.map(
               ({ icon, iconDark, title, description, cgpa }, index) => (

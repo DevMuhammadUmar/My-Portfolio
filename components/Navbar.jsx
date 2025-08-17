@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { assets } from "@/assets/assets";
+import { motion } from "motion/react";
 
 const Navbar = ({ isDarkMode, setIsDarkMode }) => {
   const sideMenuRef = useRef();
@@ -16,7 +17,11 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
   };
 
   return (
-    <nav className="bg-white w-full fixed px-5 lg:px-7 xl:px-[8%] pt-4 py-2 flex items-center justify-between z-50 dark:text-white dark:bg-[#121213]">
+    <motion.nav 
+     initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
+    className="bg-white w-full fixed px-5 lg:px-7 xl:px-[8%] pt-4 py-2 flex items-center justify-between z-50 dark:text-white dark:bg-[#121213]">
       <button
         className="cursor-pointer flex items-center justify-center"
         onClick={() => setIsDarkMode((prev) => !prev)}
@@ -79,7 +84,7 @@ const Navbar = ({ isDarkMode, setIsDarkMode }) => {
           </li>
         ))}
       </ul>
-    </nav>
+    </motion.nav>
   );
 };
 
