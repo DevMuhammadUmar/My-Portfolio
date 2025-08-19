@@ -121,19 +121,13 @@ export const serviceData = [
 ];
 
 export const infoList = [
-  {
-    icon: assets.code_icon,
-    iconDark: assets.code_icon_dark,
-    title: "Languages",
-    description: "HTML, CSS, JavaScript React Js, Next Js",
-    cgpa: " ",
-  },
+
   {
     icon: assets.edu_icon,
     iconDark: assets.edu_icon_dark,
     title: "Education",
     description:
-      "Bachelors of Science in Software Engineering  University of Central Punjab Lahore",
+      "Bachelors of Science in Software Engineering",
     cgpa: "CGPA : 3.80 / 4.0",
   },
   {
