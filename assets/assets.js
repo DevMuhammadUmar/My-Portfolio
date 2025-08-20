@@ -85,7 +85,7 @@ export const cardData = [
     tech: ["Next.js", "React", "Framer Motion", "Tailwind CSS", "JavaScript"],
     link: "https://devmuhammadumar.netlify.app/",
     image:
-      "https://raw.githubusercontent.com/DevMuhammadUmar/portfolio-assets/4ae5b3e5606818f40a9ac82caad7fdb34de1086b/Screenshot%202025-08-17%20044110.png",
+      "https://raw.githubusercontent.com/DevMuhammadUmar/portfolio-assets/0a47a2c0c8857fe83ac8371c75a0fbdde13dc8f8/Screenshot%202025-08-21%20035223.png",
   },
 ];
 

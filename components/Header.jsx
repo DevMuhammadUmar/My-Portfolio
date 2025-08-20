@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import { assets } from "@/assets/assets";
 import { motion } from "motion/react";
+import { TypeAnimation } from "react-type-animation";
 
 const Header = ({ isDarkMode }) => {
   return (
@@ -21,11 +22,26 @@ const Header = ({ isDarkMode }) => {
         initial={{ y: -100, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.3, delay: 0.2 }}
-        className="text-5xl mt-5 sm:text-7xl md:text-9xl font-extrabold text-transparent bg-clip-text 
+        className="text-4xl mt-5 sm:text-6xl md:text-8xl font-extrabold text-transparent bg-clip-text 
                      bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 
                      dark:from-green-400 dark:via-teal-400 dark:to-cyan-400"
       >
-        MUHAMMAD UMAR
+        <TypeAnimation
+          preRenderFirstString={true}
+          cursor={true}
+          sequence={[
+         
+
+            "MUHAMMAD UMAR",
+            2000,
+
+            "SOFTWARE ENGINEER",
+            1000,
+          ]}
+          speed={40}
+         
+          repeat={Infinity}
+        />
       </motion.h1>
 
       <motion.p
